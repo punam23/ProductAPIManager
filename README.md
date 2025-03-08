@@ -76,6 +76,11 @@ The ProductAPIManager is a RESTful web service designed to efficiently manage pr
           5. Build the solution to restore dependencies.
           6. Run the application.
           7. Test endpoints using tools like Postman or Swagger UI.
+
+**Test Results Screenshots**
+Attached in this repository
+https://github.com/punam23/ProductAPIManager/blob/master/Screenshots%20of%20endpoint%20testing%20using%20Swagger.docx
+
           
 
 
