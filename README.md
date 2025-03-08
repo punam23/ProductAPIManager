@@ -1,6 +1,7 @@
 # ProductAPIManager
-ProductAPIManager
+
 **Description**
+
 The ProductAPIManager is a RESTful web service designed to efficiently manage product inventories. It allows users to perform CRUD operations on products, manage stock levels, and ensure unique product identifiers. Built with ASP.NET Core and Entity Framework Core, this API is scalable, robust, and includes comprehensive unit tests to ensure functionality and reliability.
 
 **Features**
