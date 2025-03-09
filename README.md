@@ -4,6 +4,13 @@
 
 The ProductAPIManager is a RESTful web service designed to efficiently manage product inventories. It allows users to perform CRUD operations on products, manage stock levels, and ensure unique product identifiers. Built with ASP.NET Core and Entity Framework Core, this API is scalable, robust, and includes comprehensive unit tests to ensure functionality and reliability.
 
+**UnitTests solution** - please refer it here: https://github.com/punam23/ProductManagerAPITest
+
+**Test Results Screenshots**
+Attached in this repository
+https://github.com/punam23/ProductAPIManager/blob/master/Screenshots%20of%20endpoint%20testing%20using%20Swagger.docx
+
+
 **Features**
 
           Product Management: Add, update, retrieve, delete products, increment or decrement stock levels with validation.
@@ -77,9 +84,22 @@ The ProductAPIManager is a RESTful web service designed to efficiently manage pr
           6. Run the application.
           7. Test endpoints using tools like Postman or Swagger UI.
 
-**Test Results Screenshots**
-Attached in this repository
-https://github.com/punam23/ProductAPIManager/blob/master/Screenshots%20of%20endpoint%20testing%20using%20Swagger.docx
+**API Documentation**
+
+This application uses Swagger for API documentation. To view and interact with the API endpoints:
+
+          1. Start the application.
+          
+          2. Navigate to: https://localhost:<port>/swagger/
+          
+          3. Use the Swagger UI to explore and test the available endpoints.
+
+
+**Future Enhancements**
+
+          1. Add authentication and authorization.
+          
+          2. Implement advanced features like pagination and filtering for product listings.
 
           
 
