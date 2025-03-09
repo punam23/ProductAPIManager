@@ -91,9 +91,7 @@ This application uses Swagger for API documentation. To view and interact with t
           1. Start the application.
           
           2. Navigate to:    
-                    http://localhost:5000/swagger/
-                    or
-                    https://localhost:7106/swagger/
+          https://localhost:<port>/swagger/
           
           3. Use the Swagger UI to explore and test the available endpoints.
 
