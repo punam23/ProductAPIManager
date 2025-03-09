@@ -72,12 +72,6 @@ namespace ProductAPIManager.Controller
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetProductById(int id)
         {
-            // Validate that the ID is a 6-digit number
-            if (id < MinRange || id > MaxRange)
-            {
-                return BadRequest(new { Message = "Product ID must be a 6-digit postive number." });
-            }
-
             var product = await Task.FromResult(dbContext.Products.Find(id));
             if(product == null)
             {
@@ -90,12 +84,6 @@ namespace ProductAPIManager.Controller
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            // Validate that the ID is a 6-digit number
-            if (id < MinRange || id > MaxRange)
-            {
-                return BadRequest(new { Message = "Product ID must be a 6-digit postive number." });
-            }
-
             // Find the product by its ID
             var product = await Task.FromResult(dbContext.Products.Find(id));
             if (product == null)
@@ -112,13 +100,7 @@ namespace ProductAPIManager.Controller
         //api/products/{id} 
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateProduct(int id, UpdateProductDto updateProductDto)
-        {
-            // Validate that the ID is a 6-digit number
-            if (id < MinRange || id > MaxRange)
-            {
-                return BadRequest(new { Message = "Product ID must be a 6-digit postive number." });
-            }
-
+        { 
             // Find the product by its ID
             var product = await Task.FromResult(dbContext.Products.Find(id));
             if (product == null)
@@ -142,12 +124,6 @@ namespace ProductAPIManager.Controller
         [HttpPut("increment-stock/{id}/{quantity}")]
         public async Task<IActionResult> IncrementStock(int id, int quantity)
         {
-            // Validate that the ID is a 6-digit number
-            if (id < MinRange || id > MaxRange)
-            {
-                return BadRequest(new { Message = "Product ID must be a 6-digit postive number." });
-            }
-
             // Find the product by its ID
             var product = await Task.FromResult(dbContext.Products.Find(id));
 
@@ -168,13 +144,7 @@ namespace ProductAPIManager.Controller
         //api/products/decrement-stock/{id}/{quantity} 
         [HttpPut("decrement-stock/{id}/{quantity}")]
         public async Task<IActionResult> DecrementStock(int id, int quantity)
-        {
-            // Validate that the ID is a 6-digit number
-            if (id < MinRange || id > MaxRange)
-            {
-                return BadRequest(new { Message = "Product ID must be a 6-digit postive number." });
-            }
-
+        { 
             // Find the product by its ID
             var product = await Task.FromResult(dbContext.Products.Find(id));
 
