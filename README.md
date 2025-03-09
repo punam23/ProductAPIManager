@@ -84,7 +84,25 @@ https://github.com/punam23/ProductAPIManager/blob/master/Screenshots%20of%20endp
           6. Run the application.
           7. Test endpoints using tools like Postman or Swagger UI.
 
+**API Documentation**
 
+This application uses Swagger for API documentation. To view and interact with the API endpoints:
+
+          1. Start the application.
+          
+          2. Navigate to:    
+                    http://localhost:5000/swagger/
+                    or
+                    https://localhost:7106/swagger/
+          
+          3. Use the Swagger UI to explore and test the available endpoints.
+
+
+**Future Enhancements**
+
+          1. Add authentication and authorization.
+          
+          2. Implement advanced features like pagination and filtering for product listings.
 
           
 
