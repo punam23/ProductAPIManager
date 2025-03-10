@@ -49,9 +49,7 @@ namespace ProductAPIManager.Controller
                 Name = addProductDto.Name,
                 Description = addProductDto.Description,
                 Price = addProductDto.Price,
-                Stock = addProductDto.Stock,
-                CreatedAt = addProductDto.CreatedAt,
-                UpdatedAt = addProductDto.UpdatedAt
+                Stock = addProductDto.Stock
             };
 
             dbContext.Products.Add(productEntity);
@@ -130,8 +128,6 @@ namespace ProductAPIManager.Controller
             product.Price = updateProductDto.Price;
             product.Description = updateProductDto.Description;
             product.Stock = updateProductDto.Stock;
-            product.CreatedAt = updateProductDto.CreatedAt;
-            product.UpdatedAt = updateProductDto.UpdatedAt;
 
             await dbContext.SaveChangesAsync(); // save changes to db 
             return Ok(product);
@@ -160,10 +156,16 @@ namespace ProductAPIManager.Controller
             {
                 return NotFound(new { Message = "Product not found." });
             }
+            if (product.Stock + quantity < 0)
+            {
+                return BadRequest(new { Message = "Stock must be non-negative. Please provide valid quantity number" });
+
+            }
 
             // Add the specified quantity to the stock
             product.Stock += quantity;
 
+           
             // Save changes to the database
             await dbContext.SaveChangesAsync();
 
@@ -197,6 +199,13 @@ namespace ProductAPIManager.Controller
             if (quantity > product.Stock)
             {
                 return BadRequest(new { Message = "Insufficient stock.", ProductId = id, AvailableStock = product.Stock });
+            }
+
+
+            if (product.Stock - quantity < 0)
+            {
+                return BadRequest(new { Message = "Stock must be non-negative. Please provide valid quantity number" });
+
             }
 
             // Decrement the stock
